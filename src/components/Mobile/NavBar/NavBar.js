@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router';
 import { NavLink, Link } from 'react-router-dom';
-import { FaArrowLeft, FaBars } from 'react-icons/fa';
+import { FaArrowRight, FaBars } from 'react-icons/fa';
 import './navbar.scss';
 function NavBar(props) {
     const [ menuHide, toggleMenuHide ] = useState(false)
@@ -17,19 +17,19 @@ function NavBar(props) {
     return (
         <header className='navbar'>
             <h1 className='navbar--title'>{title}</h1>
-            <FaBars onClick={ ()=> toggleMenuHide(!menuHide) }/>
+            <FaBars className='navbar--icon' onClick={ ()=> toggleMenuHide(!menuHide) }/>
             { menuHide ?
             <nav className='navbar--menu' onClick={ e => {
                 toggleMenuHide(!menuHide)
                 e.stopPropagation()
             }}>
-                <ul onClick={ e =>e.stopPropagation() }>
-                    <FaArrowLeft onClick={ () => toggleMenuHide(!menuHide) }/>
-                    <Link to='/'><li>Home</li></Link>
-                    <NavLink to='/about' activeClassName='active'><li>About</li></NavLink>
-                    <NavLink to='/skills' activeClassName='active'><li>Skills</li></NavLink>
-                    <NavLink to='/contact' activeClassName='active'><li>Contact</li></NavLink>
-                    <NavLink to='/projects' activeClassName='active'><li>Projects</li></NavLink>
+                <ul onClick={ e => e.stopPropagation() }>
+                    <FaArrowRight onClick={ () => toggleMenuHide(!menuHide) }/>
+                    <Link to='/' ><li>Home</li></Link>
+                    <NavLink to='/about' activeClassName='active' onClick={ () => toggleMenuHide(!menuHide) }><li>About</li></NavLink>
+                    <NavLink to='/skills' activeClassName='active' onClick={ () => toggleMenuHide(!menuHide) }><li>Skills</li></NavLink>
+                    <NavLink to='/contact' activeClassName='active' onClick={ () => toggleMenuHide(!menuHide) }><li>Contact</li></NavLink>
+                    <NavLink to='/projects' activeClassName='active' onClick={ () => toggleMenuHide(!menuHide) }><li>Projects</li></NavLink>
                 </ul>
             </nav>
             : null

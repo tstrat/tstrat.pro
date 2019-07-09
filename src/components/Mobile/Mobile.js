@@ -1,9 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
-import { FaGithub, FaLinkedin, FaPhone } from 'react-icons/fa'
-import profilePic from '../../media/ts-profile-pic-square.png';
-import NavBar from './NavBar/NavBar';
-import About from '../About/About';
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { GoMail } from 'react-icons/go'
+import profilePic from '../../media/ts-profile-pic-square.png'
+import NavBar from './NavBar/NavBar'
+import About from '../About/About'
+import Contact from '../Contact/Contact'
 
 function Mobile() {
     return (
@@ -11,17 +13,19 @@ function Mobile() {
         <NavBar/>
         <Switch>
             <Route path='/about' render={() =>
-            <>
-                <div className='about__short'>
-                    <img src={profilePic} alt='Travis Stratton'/>
-                    <ul className='about__short__contact'>
-                        <li><FaGithub/> /tstrat</li>
-                        <li><FaLinkedin/> /in/tstrat</li>
-                        <li><FaPhone/> (520) 955 - 0860</li>
-                    </ul>
-                </div>
-                <About/>
-            </>}/>
+                <>
+                    <div className='about__short'>
+                        <img src={profilePic} alt='Travis Stratton'/>
+                        <ul className='about__short__contact'>
+                            <li><FaGithub/></li>
+                            <li><FaLinkedin/></li>
+                            <li><GoMail/></li>
+                        </ul>
+                    </div>
+                    <About/>
+                </>
+            }/>
+            <Route path='/contact' component={Contact}/>
         </Switch>
         </>
     )

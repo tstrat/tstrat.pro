@@ -6,12 +6,18 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 2rem;
+
     &--title {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
+    &--icon {
+        font-size: 3rem;
+    }
     &--menu {
         position: fixed;
+        z-index: 1;
         top:0;
         right:0;
         height: 100vh;
@@ -33,18 +39,18 @@
             padding: 2rem;
             svg {
                 color: black;
-                font-size: 1.4rem;
+                font-size: 3rem;
                 position: absolute;
-                top:0;
-                left:0;
+                top:1rem;
+                left:1rem;
             }
             a {
                 text-decoration: none;
-                font-size: 2.4rem;
-                margin-bottom: 1rem;
+                font-size: 3rem;
+                margin-top: 3rem;
                 color: black;
                 &.active {
-                    color: purple;
+                    color: rgb(128, 25, 128);
                 }
             }
 
