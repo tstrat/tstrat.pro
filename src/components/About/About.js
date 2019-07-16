@@ -12,7 +12,7 @@ function About(props) {
     const { about, quotes } = aboutMe; // from json
     const [ quote ] = useState(getRandomQuote(quotes));
     const header = about[0];
-    const content = about.slice(1).map(sentence => <p>{ sentence }</p>)
+    const content = about.slice(1).map((sentence, i) => <p key={i}>{ sentence }</p>)
     return (
         <div className='about'>
             <div className='about--quote'>

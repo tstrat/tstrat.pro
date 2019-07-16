@@ -2,7 +2,6 @@
     min-height: calc(100vh - 90px);
     width: 100vw;
     position: relative;
-    background-image: url('../../media/bg.jpg');
     padding-top: 1rem;
     &__short {
         background-color: rgb(24, 24, 24);
@@ -27,6 +26,12 @@
                 text-align: center;
                 border: 5px solid black;
                 box-shadow: 0 0 5px black;
+
+            }
+            a{
+                width: 100%;
+                text-decoration: none;
+                color: black;
             }
         }
         img {
@@ -76,16 +81,19 @@
             p {
                 margin-top: 1.8rem;
             }
+            a {
+                color: rgb(44, 191, 196)
+            }
         }
     }
 }
 
 
-@media screen and (min-width: 900px) {
-    .about{
-        background: white;
-        &--content {
-            color: black;
-        }
-    }
-}
+// @media screen and (min-width: 900px) {
+//     .about{
+//         background: white;
+//         &--content {
+//             color: black;
+//         }
+//     }
+// }
