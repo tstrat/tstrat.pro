@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Minion Manager",
+        "tech": ["React", "Node", "Express", "Redux", "Styled-Components", "SASS"],
+        "description": "This app allows players of Dungeons and Dragons to create encounters with various monsters, view the stat blocks of those monsters, and manage their attack and health according to the rules of DnD 5th Edition.",
+        "hosted": "https://mm5e.ninja",
+        "github": "https://github.com/tstrat/personal-project",
+        "images": [
+            {
+                "url": "mm5e/logo.png",
+                "alt": "Dungeons and Dragons Logo"
+            },
+            { "url": "mm5e/screenshot-1.png" },
+            { "url": "mm5e/screenshot-2.png" },
+            { "url": "mm5e/screenshot-3.png" },
+            { "url": "mm5e/screenshot-4.png" },
+            { "url": "mm5e/screenshot-5.png" },
+            { "url": "mm5e/screenshot-6.png" },
+            { "url": "mm5e/screenshot-7.png" }
+        ]
+    },
+    {
+        "name": "PokeDex",
+        "tech": ["React", "Node", "Express"],
+        "description": "An early project in React, this pokedex uses the standard pokemon API REST calls to create entries for each pokemon selected.  There is no database backing this project, and all data is stored on the server in memory.",
+        "hosted": "https://pokedex.tstrat.pro",
+        "github": "https://github.com/tstrat/pokedex_nodb",
+        "images": [
+            {
+                "url": "pokedex/logo.png",
+                "alt": "Pokemon Logo"
+            },
+            { "url": "pokedex/screenshot-1.png" },
+            { "url": "pokedex/screenshot-2.png" },
+            { "url": "pokedex/screenshot-3.png" }
+        ]
+    }
+]

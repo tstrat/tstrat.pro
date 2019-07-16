@@ -1,0 +1,126 @@
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    // background: url('../../media/bg.jpg');
+
+    &-single {
+        box-shadow: 0 0 5px black;
+        padding: 1rem;
+        color: white;
+        box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.527);
+        h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: 0.5rem;
+            margin-top: 0.5rem;
+            width: 80vw;
+            text-align: center;
+            padding: 2rem;
+            // border-bottom: 3px solid #d83030;
+            transition: font-size 0.1s ease-in;
+            &:hover {
+                font-size: 3.5rem;
+                cursor: pointer;
+                text-shadow: 1px 1px 1px rgba(126, 125, 125, 0.589);
+            }
+        }
+        p {
+            padding: 2rem;
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.project-modal {
+    background: white;
+    height: 100vh;
+    width: 100vw;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    overflow-y:scroll;
+    &__close {
+        position:absolute;
+        top:0;
+        left:0;
+        border: none;
+        font-size: 4rem;
+    }
+
+    &__logo {
+        height: 200px;
+        // width: 200px;
+        margin: 0 auto;
+    }
+    &-description {
+        padding: 2rem;
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5rem;
+        }
+        h2 {
+            margin: 1rem 0 1rem 1rem;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            margin-top: 1rem;
+        }
+    }
+
+    .carousel {
+        position: relative;
+        min-height: 400px;
+        min-width: 100vw;
+        margin-bottom: 2rem;
+        .wrapper {
+            position: absolute;
+            top:0;
+            left: 5%;
+            display:flex;
+            transition: transform 1s ease-in-out;
+
+        }
+
+        &__btns {
+            position: absolute;
+            bottom:0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            // margin: 2rem;
+
+            & > * {
+                // SVG FONT ICONS IN BTNS
+                font-size: 3rem;
+                width: 120px;
+            }
+            & .disabled {
+                opacity: 0.5;
+            }
+        }
+    }
+    &__image {
+        height: 350px;
+        width: 350px;
+        border: 1px solid black;
+        opacity:0.5;
+        transform:scale(0.5);
+
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        &.selected {
+            opacity: 1;
+            transform: scale(1)
+        }
+    }
+}
