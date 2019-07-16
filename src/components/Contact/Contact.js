@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import './contact.scss';
 
 function Contact() {
-
+    const [ sendStatus, setSendStatus ] = useState(0);
     const initialValues = {
         name: '',
         email: '',
@@ -19,14 +20,20 @@ function Contact() {
     })
     return (
         <div className='contact'>
-
+            { sendStatus === 0 ?
             <Formik
                 initialValues= { initialValues }
                 validationSchema={SignupSchema}
                 onSubmit={(values, actions) => {
                     // send email to server?
-                    actions.setSubmitting(false)
-
+                    axios.post('/mailer/send', values).then(response => {
+                        setSendStatus(1) // success message
+                    }).catch(err => {
+                        console.log(err);
+                        setSendStatus(-1); // error message
+                    }).finally(() => {
+                        actions.setSubmitting(false) // free up formik
+                    })
                 }}
             >
                 { ({ values, errors, touched, isSubmitting }) =>
@@ -60,6 +67,18 @@ function Contact() {
                 }
 
             </Formik>
+            : sendStatus === 1 ?
+                <div className='success'>
+                    <h1>Sucess!</h1>
+                    <h2>Message was successfully sent to Travis! Feel free to keep browsing.</h2>
+                    <Link to='/about'><button>Go Back</button></Link>
+                </div>
+            :   <div className='error'>
+                    <h1>An Error has Occurred!</h1>
+                    <h2>Something went wrong :(  Please try again at a later time.</h2>
+                    <Link to='/about'><button>Go Back</button></Link>
+                </div>
+            }
         </div>
     );
 };
