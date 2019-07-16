@@ -1,9 +1,11 @@
 const express = require('express')
 const nodemailer = require("nodemailer");
+const path = require('path');
 require('dotenv').config()
 const app = express()
 app.use(express.json());
 
+app.use(express.static(`${__dirname}/../build`))
 const { SERVER_PORT, SMTP_CONNECTION} = process.env
 
 app.post('/mailer/send', async (req, res) => {
@@ -23,9 +25,6 @@ app.post('/mailer/send', async (req, res) => {
 
     res.status(200).send(responseMessage);
 })
-
-
-//endpoints here
 
 app.listen(SERVER_PORT || 4000, () => console.log(`Server started, port: ${SERVER_PORT}
 Don't spook the monkey 🙈`))
