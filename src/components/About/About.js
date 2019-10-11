@@ -25,7 +25,7 @@ function About(props) {
             <h1 className='about--content--header'>{ header }</h1>
                 <article className='about--content--paragraph'>
                     {content}
-                    <p className='dev-mtn-info'>
+                    <p>
                         You can find more info about DevMountain from their site<b> </b>
                         <a href='https://devmountain.com/ux-bootcamp-immersive'>here</a>.
                     </p>
