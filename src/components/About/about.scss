@@ -67,6 +67,7 @@
         margin: 2rem 0;
         padding: 2rem;
         color: white;
+        text-align: center;
         &--header {
             font-size: 2.4rem;
             font-weight: bold;
@@ -74,10 +75,14 @@
             margin: 0 1rem;
             padding-left: 1rem;
             border-bottom: 3px solid rgb(216, 48, 48);
+            text-align: center;
+            padding: 2rem 0rem;
         }
 
         &--paragraph {
             font-size: 1.8rem;
+            width: 80%;
+            margin: 0 auto;
             p {
                 margin-top: 1.8rem;
             }
@@ -85,6 +90,7 @@
                 color: rgb(44, 191, 196)
             }
         }
+        
     }
 }
 
